@@ -5,12 +5,14 @@
 #read config/settings.tin
 #read scripts/common/logger.tin
 
+#var initialized 0
+
 #alias {connect} {#session toril torilmud.com 9999}
 
-/* Set Character data when score displays
- * Load character, race, and class script files */
+/* Set Character data when score displays */
 #var file_suffix .tin;
 
+/* Load character, race, and class script files */
 #action {Score information for %1} {#var character_name %1}
 
 #action {^Level: %1 Race: %w %+ Class: %3%s$} {
@@ -18,11 +20,10 @@
   #var {character_race} {%2};
   #var {character_class} {%3};
 
-  #if {$initialized} {
+  #if {$initialized == 0} {
     #read characters/$character_name$file_suffix;
     #read races/$character_race$file_suffix;
     #read classes/$character_class$file_suffix;
-    #var initialized 1
   }
 }
 
