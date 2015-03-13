@@ -1,4 +1,5 @@
 #nop Loading... config/settings.tin;
+#var my_account thegnome
 
 #config {256 colors} {on}
 #config {mccp} {on}

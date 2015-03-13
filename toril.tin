@@ -1,8 +1,6 @@
 #showme Loading... toril.tin
 #kill
 
-#var my_account
-
 #read config/settings.tin
 #read config/loader.tin
 #read scripts/common/logger.tin
@@ -14,12 +12,12 @@
 
 /* NEVER trigger your password EVER! */
 #action {^Account name} {
-  #if {$my_account} {
+  #if {&{my_account}} {
     $my_account
   } {
     #showme ****************************************************;
     #showme * Supply <my_account> variable with your account;
-    #showme * in the toril.tin file;
+    #showme * in the config/settings.tin file;
     #showme ****************************************************;
     #end;
   };
