@@ -1,0 +1,7 @@
+#showme Loading... logger.tin
+
+#var public_chat_log logs/public_chat.log
+#var private_chat_log logs/public_chat.log
+#var info_log logs/info.log
+
+#showme ...Loaded logger.tin

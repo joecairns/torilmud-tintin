@@ -1,0 +1,8 @@
+#showme Loading... config/settings.tin
+
+#config {256 colors} {on}
+#config {mccp} {on}
+
+#split {0} {0}
+
+#showme ...Loaded config/settings.tin
