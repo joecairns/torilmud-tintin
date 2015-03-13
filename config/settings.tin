@@ -1,4 +1,4 @@
-#showme Loading... config/settings.tin
+#nop Loading... config/settings.tin;
 
 #config {256 colors} {on}
 #config {mccp} {on}

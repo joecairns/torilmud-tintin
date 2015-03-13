@@ -1,4 +1,4 @@
-#showme Loading... logger.tin
+#nop Loading... logger.tin;
 
 #var public_chat_log logs/public_chat.log
 #var private_chat_log logs/public_chat.log
