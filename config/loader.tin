@@ -1,0 +1,25 @@
+#nop Loading.... loader.tin;
+
+/* Set Character data when score displays */
+#var file_suffix .tin;
+
+/* Load character, race, and class script files */
+#action {Welcome to Toril!} {sc}
+
+#action {Score information for %1} {#var character_name %1}
+
+#action {^Level: %1 Race: %w %+ Class: %3%s$} {
+  #var {character_level} {%1};
+  #var {character_race} {%2};
+  #var {character_class} {%3};
+
+  #if {$initialized == 0} {
+    #read characters/$character_name$file_suffix;
+    #read races/$character_race$file_suffix;
+    #read classes/$character_class$file_suffix;
+  };
+
+  #var initialized 1;
+}
+
+#showme ...Loaded config/loader.tin (oh the irony)
