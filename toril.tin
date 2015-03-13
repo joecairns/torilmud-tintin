@@ -1,6 +1,8 @@
 #showme Loading... toril.tin
 #kill
 
+#var my_account
+
 #read config/settings.tin
 #read config/loader.tin
 #read scripts/common/logger.tin
@@ -8,9 +10,20 @@
 #var initialized 0
 
 #alias {connect} {#session toril torilmud.com 9999}
+#alias {reset} {#read toril.tin}
 
 /* NEVER trigger your password EVER! */
-#action {^Account name} {thegnome}
+#action {^Account name} {
+  #if {$my_account} {
+    $my_account
+  } {
+    #showme ****************************************************;
+    #showme * Supply <my_account> variable with your account;
+    #showme * in the toril.tin file;
+    #showme ****************************************************;
+    #end;
+  };
+}
 
 /* have fun! */
 connect
