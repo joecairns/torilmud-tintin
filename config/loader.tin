@@ -22,4 +22,6 @@
   #var initialized 1;
 }
 
+#action {^Welcome to Toril!} {score}
+
 #showme ...Loaded config/loader.tin (oh the irony)
