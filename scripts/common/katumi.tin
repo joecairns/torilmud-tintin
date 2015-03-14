@@ -1,0 +1,5 @@
+#nop Loading...  katumi.tin;
+
+#alias {stat %1} {t katumi stat %1}
+
+#showme ...Loaded katumi.tin

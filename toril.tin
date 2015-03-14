@@ -4,6 +4,7 @@
 #read config/settings.tin
 #read config/loader.tin
 #read scripts/common/logger.tin
+#read scripts/common/katumi.tin
 
 #var initialized 0
 

@@ -13,7 +13,8 @@
 /** Capture Private Messages (gsay, tell, petition) **/
 #action {^%1 tells you '%2'$} {
   #var current_time {@get_time{}};
-  #line log $private_chat_log {<100>$current_time <090>%1 <100>: <170>%2<090>};
+  #if {%1 == 'Katumi'} {#var log $info_log} {#var log $private_chat_log};
+  #line log $log {<100>$current_time <090>%1 <100>: <170>%2<090>};
 }
 
 #action {^You tell %1 '%2'$} {
