@@ -1,0 +1,58 @@
+#nop Loading... auto_stand.tin;
+
+#var auto_stand 1
+
+#alias {tstand} {
+  if {$auto_stand == 1} {
+    #var auto_stand 0;
+    #echo {%c%h} {red} { AUTO STAND off };
+  } {
+    #var auto_stand 1;
+    #echo {%c%h} {green} { AUTO STAND on };
+  }
+}
+
+#alias {astand} {
+  if {$auto_stand == 1} {
+    stand;
+  } {
+    #bell;
+    #echo {%c%h} {red} { YOU NEED TO STAND BUT AUTO STAND IS OFF };
+  }
+}
+
+#action {sends you crashing to the ground in a spray} {astand}
+#action {%1 avoids your%0bash, you topple over and fall to the ground.} {astand}
+#action {Maybe you should get up off your knees first?} {astand}
+#action {and you go down as well.} {astand}
+#action {does an acrobatic maneuver in battle, tripping you.} {astand}
+#action {flipping you onto your back!} {astand}
+#action {Get off your knees!} {astand}
+#action {In your haste to slam people around, you slip and fall!} {astand}
+#action {just for the attempt, you fall down.} {astand}
+#action {only to fall onto your face THROUGH} {astand}
+#action {only to sprawl completely THROUGH it.} {astand}
+#action {sends you sprawling.} {astand}
+#action {shifts sideways and you sail past, tumbling helplessly!} {astand}
+#action {The powerful sweep sends you crashing to the ground!} {astand}
+#action {The space around you seems to fold} {look in fold}
+#action {throw yourself head first directly into the ground!} {astand}
+#action {You are knocked down} {astand}
+#action {You are knocked off of your feet} {astand}
+#action {You are knocked to the ground by the powerful winds!} {astand}
+#action {You are knocked to the ground by the torrent of power thrown at your body!} {astand}
+#action {You are slammed down on the ground!} {astand}
+#action {You fall and injure yourself!} {astand}
+#action {You go crashing to the} {astand}
+#action {You go crashing to the ground.} {astand}
+#action {You lose your balance and fall down!} {astand}
+#action {You lose your balance and are dismounted.} {astand}
+#action {You simply bounce off } {astand}
+#action {You stagger about, then fall sprawling!} {astand}
+#action {You stagger, and fall to your knees!} {astand}
+#action {you topple over} {astand}
+#action {You are swept off your feet by the size of the wave!} {astand}
+#action {Boldly taking the impact, you are still knocked aside!} {astand}
+#action {Intense pain runs through your body as your ribs fracture from the impact.} {astand}
+
+#showme ...Loaded auto_stand.tin;
