@@ -4,4 +4,26 @@
 #var private_chat_log logs/public_chat.log
 #var info_log logs/info.log
 
+#function {get_time} {
+  #format {time} {%t} {%r};
+  #format {formatted_time} {%t} {$time};
+  #var result {$formatted_time};
+}
+
+#action {%1 group-say '%1'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <120>-\> <090>: <030>%1<090>}
+}
+
+#action {%1 tells you '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <090>%1 <100>: <170>%2<090>};
+}
+
+#action {You tell %1 '%2'$} {
+  #var thetime {@gettime{}};
+  #line log $private_chat_log {<100>$thetime <090>You <170>-\> <060>%1 <090>: <160>%2<090>}
+}
+
+
 #showme ...Loaded logger.tin
