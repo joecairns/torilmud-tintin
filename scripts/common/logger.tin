@@ -1,7 +1,7 @@
 #nop Loading... logger.tin;
 
 #var public_chat_log logs/public_chat.log
-#var private_chat_log logs/public_chat.log
+#var private_chat_log logs/private_chat.log
 #var info_log logs/info.log
 
 #function {get_time} {
@@ -10,19 +10,25 @@
   #var result {$formatted_time};
 }
 
-#action {%1 group-say '%1'$} {
-  #var current_time {@get_time{}};
-  #line log $private_chat_log {<100>$current_time <120>-\> <090>: <030>%1<090>}
-}
-
-#action {%1 tells you '%2'$} {
+/** Capture Private Messages (gsay, tell, petition) **/
+#action {^%1 tells you '%2'$} {
   #var current_time {@get_time{}};
   #line log $private_chat_log {<100>$current_time <090>%1 <100>: <170>%2<090>};
 }
 
-#action {You tell %1 '%2'$} {
-  #var thetime {@gettime{}};
-  #line log $private_chat_log {<100>$thetime <090>You <170>-\> <060>%1 <090>: <160>%2<090>}
+#action {^You tell %1 '%2'$} {
+  #var thetime {@get_time{}};
+  #line log $private_chat_log {<100>$thetime <090>You <170>-\> <060>%1 <090>: <160>%2<090>};
+}
+
+#action {^%1 group-say '%1'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <120>-\> <090>: <030>%1<090>};
+}
+
+#action {^%1 responds to your petition with '%2'$} {
+  #var thetime {@get_time{}};
+  #line log $private_chat_log {<100>$thetime <090>%1 : <010>%2<090>};
 }
 
 
