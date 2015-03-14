@@ -31,5 +31,15 @@
   #line log $private_chat_log {<100>$thetime <090>%1 : <010>%2<090>};
 }
 
+/*** Capture Public Mud Chat (OOC, GCC) ***/
+#action {^%1 GCC: '%2'$} {
+  #var thetime {@get_time{}};
+  #line log $public_chat_log {<100>$thetime <120>%1 : <030>%2<100>};
+}
+
+#action {^%1 OOC: '%2'$} {
+  #var thetime {@get_time{}};
+  #line log $public_chat_log {<100>$thetime <090>%1 : <120>%2<090>};
+}
 
 #showme ...Loaded logger.tin
