@@ -1,0 +1,51 @@
+#nop Loading... auto_assist.tin;
+#var auto_assist 0
+#var ready_to_assist 0
+
+/*
+    tAssist will toggle the auto assister, which is defaulted to off.
+
+    TODO: Taggling assist will fail out unless a tank is assigned.
+
+*/
+
+#alias {tassist} {
+  #var arg %1;
+
+  #if {$auto_assist == 1} {
+    #var auto_assist 0;
+    #var ready_to_assist 0;
+    #echo {%c%h} {red} { AUTO ASSIST off };
+  } {
+    #if {&{arg}} {tank $arg};
+    #var auto_assist 1;
+    #echo {%c%h} {green} { AUTO ASSIST on };
+  }
+}
+
+#alias {tank} {
+  #var tank %1;
+  #echo {%c%h} {blue} { TANK is $tank };
+}
+
+#alias {auto_assit} {
+  #if {$autoassist == 1 && $ready_to_assist == 1} {
+    assist $tank
+    #var ready_to_assist 0;
+  }
+}
+
+#action {You can't see who is fighting $tank.} {
+  #delay 15;
+  auto_assist;
+}
+
+#action {^$tank sends %0 sprawling with a %0 bash.$} {auto_assist}
+#action {$tank places %0 in the back} {auto_assist}
+#action {$tank does an acrobatic maneuver} {auto_assist}
+#action {$tank attacks %0, landing} {auto_assist}
+#action {$tank's attack only grazes %0} {auto_assist}
+#action {$tank {wounds|hits|slashes} %0} {auto_assist}
+#action {$tank grits {his|her} teeth and viciously headbutts %0 in the face!} {auto_assist}
+
+#showme ...Loaded auto_assist.tin
