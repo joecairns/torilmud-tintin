@@ -9,7 +9,11 @@
 #var initialized 0
 
 #alias {connect} {#session toril torilmud.com 9999}
-#alias {reset} {#read toril.tin}
+
+#alias {reset} {
+  #read toril.tin;
+  score;
+}
 
 /* NEVER trigger your password EVER! */
 #action {^Account name} {
