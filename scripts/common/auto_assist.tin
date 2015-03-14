@@ -29,7 +29,7 @@
 }
 
 #alias {auto_assit} {
-  #if {$autoassist == 1 && $ready_to_assist == 1} {
+  #if {$auto_assist == 1 && $ready_to_assist == 1} {
     assist $tank
     #var ready_to_assist 0;
   }
