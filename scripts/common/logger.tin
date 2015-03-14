@@ -42,4 +42,16 @@
   #line log $public_chat_log {<100>$thetime <090>%1 : <120>%2<090>};
 }
 
+/** Capture Skill and Level ups **/
+#action {^You have learned something new about %0!$} {
+  #var thetime {@get_time{}};
+  #line log $info_log {<100>$thetime <020>LEARNED<090> : <120>%0<090>};
+}
+
+#action {^You raise a level!$} {
+  #var thetime {@get_time{}};
+  #line log $info_log {<100>$thetime <020>LEVEL<090> : <120>$mychar<090>};
+}
+
+
 #showme ...Loaded logger.tin
