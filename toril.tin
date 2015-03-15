@@ -3,6 +3,7 @@
 
 #read config/settings.tin
 #read config/loader.tin
+#read helpers/string_helpers.tin
 #read scripts/common/logger.tin
 #read scripts/common/katumi.tin
 #read scripts/common/auto_assist.tin
