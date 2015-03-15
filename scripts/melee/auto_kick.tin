@@ -1,0 +1,24 @@
+#nop Loading... auto_kick.tin;
+
+#var auto_kick 0
+
+#alias {tkick} {
+  #if {$auto_kick == 1} {
+    #var auto_kick 0;
+    #echo {%c%h} {red} { AUTO KICK off }
+  } {
+    #var auto_kick 1;
+    #echo {%c%h} {green} { AUTO KICK on }
+  }
+}
+
+#alias {kk} {
+  #if {$auto_kick == 1} {kick}
+}
+
+#action {Your beautiful full-circle-kick misses %0 by a mile.} {kk}
+#action {You miss your kick at %0 groin, much to his relief.} {kk}
+#action {Your boots need polishing again - blood all over.} {kk
+#action {Your kick hits %0 in the solar plexus.} {kk}
+
+#showme ...Loaded auto_kick.tin
