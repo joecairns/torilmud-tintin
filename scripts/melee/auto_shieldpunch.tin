@@ -1,0 +1,22 @@
+#nop Loading... auto_shieldpunch.tin;
+
+#var auto_shieldpunch 0
+
+#alias {tpunch} {
+  #if {$auto_shieldpunch == 1} {
+    #var auto_shieldpunch 0;
+    #echo {%c%h} {red} { AUTO SHIELDPUNCH off }
+  } {
+    #var auto_shieldpunch 1;
+    #echo {%c%h} {green} { AUTO SHIELDPUNCH on }
+  }
+}
+
+#alias {sp} {
+  #if {$auto_shieldpunch == 1} {shieldpunch}
+}
+
+#action {You slam your shield into %0} {sp}
+#action {You miss %0 with your clumsy shieldpunch!} {sp}
+
+#showme ...Loaded auto_shieldpunch.tin
