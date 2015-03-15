@@ -1,0 +1,28 @@
+#nop Loading... auto_bash.tin;
+
+#var auto_bash 0
+
+#alias {tbash} {
+  #if {$auto_bash == 1} {
+    #var auto_bash 0;
+    #echo {%c%h} {red} { AUTOBASH off }
+  } {
+    #var auto_bash 1;
+    #echo {%c%h} {green} { AUTOBASH on }
+  }
+}
+
+#alias {bb} {
+  #if {$auto_bash == 1} {bash}
+}
+
+#action {%0 clambers to %1 feet.} {bb}
+#action {%0 rises to %1 feet.} {bb}
+#action {%0 staggers about, but manages to get to %* feet.} {bb}
+
+#action {%0 avoids your bash,} {
+  stand;
+  bb;
+}
+
+#showme ...Loaded auto_bash.tin

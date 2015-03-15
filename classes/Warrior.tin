@@ -1,4 +1,4 @@
 #nop Loading... classes/Warrior.tin;
-
+#read scripts/melee/auto_bash.tin
 
 #showme ...Loaded classes/Warrior.tin
