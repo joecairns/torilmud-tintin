@@ -5,10 +5,10 @@
 #alias {tbash} {
   #if {$auto_bash == 1} {
     #var auto_bash 0;
-    #echo {%c%h} {red} { AUTOBASH off }
+    #echo {%c%h} {red} { AUTO BASH off }
   } {
     #var auto_bash 1;
-    #echo {%c%h} {green} { AUTOBASH on }
+    #echo {%c%h} {green} { AUTO BASH on }
   }
 }
 
