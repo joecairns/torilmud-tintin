@@ -20,7 +20,7 @@
 /* NEVER trigger your password EVER! */
 #action {^Account name} {
   #if {&{my_account}} {
-    $my_account
+    $my_account;
   } {
     #showme ****************************************************;
     #showme * Supply <my_account> variable with your account;
