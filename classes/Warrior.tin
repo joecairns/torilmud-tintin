@@ -1,4 +1,7 @@
 #nop Loading... classes/Warrior.tin;
+
 #read scripts/melee/auto_bash.tin
+#read scripts/melee/auto_shieldpunch.tin
+#read scripts/melee/auto_kick.tin
 
 #showme ...Loaded classes/Warrior.tin
