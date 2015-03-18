@@ -21,10 +21,14 @@
   }
 }
 
-#action {%0 sends you crashing to the ground in a spray} {astand}
-#action {%1 avoids your%0bash, you topple over and fall to the ground.} {astand}
+/* these two actions are special - something was tried */
+/* mebbe try to execute the command that triggered this message somehow? */
 #action {Maybe you should get up off your knees first?} {astand}
 #action {Maybe you should get on your feet first?} {astand}
+
+
+#action {%0 sends you crashing to the ground in a spray} {astand}
+#action {%1 avoids your%0bash, you topple over and fall to the ground.} {astand}
 #action {%0 and you go down as well.} {astand}
 #action {%0 does an acrobatic maneuver in battle, tripping you.} {astand}
 #action {%0 flipping you onto your back!} {astand}
