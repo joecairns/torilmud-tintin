@@ -11,45 +11,51 @@
 }
 
 /** Capture Private Messages (gsay, tell, petition) **/
-#action {^%1 tells you '%2'$} {
+#action {%1 tells you '%2'$} {
   #var current_time {@get_time{}};
-  #if {%1 == 'Katumi'} {#var log $info_log} {#var log $private_chat_log};
+  #var sender %1;
+  #if {"$sender" == "Katumi"} {#var log $info_log} {#var log $private_chat_log};
   #line log $log {<100>$current_time <090>%1 <100>: <170>%2<090>};
 }
 
-#action {^You tell %1 '%2'$} {
+#action {You tell %1 '%2'$} {
   #var thetime {@get_time{}};
   #line log $private_chat_log {<100>$thetime <090>You <170>-\> <060>%1 <090>: <160>%2<090>};
 }
 
-#action {^%1 group-say '%1'$} {
+#action {%1 group-say '%1'$} {
   #var current_time {@get_time{}};
   #line log $private_chat_log {<100>$current_time <120>-\> <090>: <030>%1<090>};
 }
 
-#action {^%1 responds to your petition with '%2'$} {
+#action {%1 group-says '%2'$} {
+  #var current_time {@get_time{}};
+  #line log $private_chat_log {<100>$current_time <120>%1<090>: <030>%2<090>};
+}
+
+#action {%1 responds to your petition with '%2'$} {
   #var thetime {@get_time{}};
   #line log $private_chat_log {<100>$thetime <090>%1 : <010>%2<090>};
 }
 
 /*** Capture Public Mud Chat (OOC, GCC) ***/
-#action {^%1 GCC: '%2'$} {
+#action {%1 GCC: '%2'$} {
   #var thetime {@get_time{}};
   #line log $public_chat_log {<100>$thetime <120>%1 : <030>%2<100>};
 }
 
-#action {^%1 OOC: '%2'$} {
+#action {%1 OOC: '%2'$} {
   #var thetime {@get_time{}};
   #line log $public_chat_log {<100>$thetime <090>%1 : <120>%2<090>};
 }
 
 /** Capture Skill and Level ups **/
-#action {^You have learned something new about %0!$} {
+#action {You have learned something new about %0!$} {
   #var thetime {@get_time{}};
   #line log $info_log {<100>$thetime <020>LEARNED<090> : <120>%0<090>};
 }
 
-#action {^You raise a level!$} {
+#action {You raise a level!$} {
   #var thetime {@get_time{}};
   #line log $info_log {<100>$thetime <020>LEVEL<090> : <120>$mychar<090>};
 }
