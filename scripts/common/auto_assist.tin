@@ -28,9 +28,9 @@
   #echo {%c%h} {blue} { TANK is $tank };
 }
 
-#alias {auto_assit} {
+#alias {auto_assist} {
   #if {$auto_assist == 1 && $ready_to_assist == 1} {
-    assist $tank
+    assist $tank;
     #var ready_to_assist 0;
   }
 }
