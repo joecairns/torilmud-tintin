@@ -1,3 +1,13 @@
 #nop Loading... characters/Raethax.tin;
 
+#var primary_bag sack
+#var secondary_bag
+
+#var armor_potion amber
+
+#alias {armor} {
+  get $armor_potion $primary_bag;
+  qua $armor_potion;
+}
+
 #showme ...Loaded characters/Raethax.tin
