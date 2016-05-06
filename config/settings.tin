@@ -3,6 +3,24 @@
 
 #config {256 colors} {on}
 #config {mccp} {on}
+#config {256 colors}  {on}
+#config {auto tab}  {5000}
+#config {buffer size}  {20000}
+#config {charset}  {ascii}
+#config {command color}  {<078>}
+#config {command echo}  {on}
+#config {connect retry}  {15}
+#config {history size}  {1000}
+#config {packet patch}  {0.00}
+#config {repeat char}  {!}
+#config {repeat enter}  {off}
+#config {scroll lock}  {on}
+#config {speedwalk}  {on}
+#config {tintin char}  {#}
+#config {verbatim}  {off}
+#config {verbatim char}  {\}
+#config {verbose}  {off}
+#config {wordwrap}  {on}
 
 #split {0} {0}
 
