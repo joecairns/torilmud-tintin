@@ -3,6 +3,7 @@
 #var public_chat_log logs/public_chat.log
 #var private_chat_log logs/private_chat.log
 #var info_log logs/info.log
+#var item_log logs/item.log
 
 #function {get_time} {
   #format {time} {%t} {%r};
@@ -14,12 +15,14 @@
 #action {%1 tells you '%2'$} {
   #var current_time {@get_time{}};
   #var sender %1;
-  #if {"$sender" == "Katumi"} {#var log $info_log} {#var log $private_chat_log};
+  #if {"$sender" == "Katumi"} {#var log $item_log} {#var log $private_chat_log};
   #line log $log {<100>$current_time <090>%1 <100>: <170>%2<090>};
 }
 
 #action {You tell %1 '%2'$} {
+  #var recipient %1;
   #var thetime {@get_time{}};
+  #if {"$recipient" == "Katumi"} {#var log $item_log} {#var log $private_chat_log};
   #line log $private_chat_log {<100>$thetime <090>You <170>-\> <060>%1 <090>: <160>%2<090>};
 }
 
