@@ -1,0 +1,10 @@
+#action {< P: %1 >} {
+  #var is_fighting 0;
+  #var character_position %1;
+}
+
+#action {< T: %1 TC: %2 E: %3 EC: %4 EP: %5 P: %6 >} {
+  #var is_fighting 1;
+  #var enemy_condition %4;
+  #var character_position %6;
+}

@@ -1,6 +1,5 @@
 #nop Loading... auto_assist.tin;
 #var auto_assist 0
-#var ready_to_assist 0
 
 /*
     tAssist will toggle the auto assister, which is defaulted to off.
@@ -14,7 +13,6 @@
 
   #if {$auto_assist == 1} {
     #var auto_assist 0;
-    #var ready_to_assist 0;
     #echo {%c%h} {red} { AUTO ASSIST off };
   } {
     #if {&{arg}} {tank $arg};
@@ -29,9 +27,8 @@
 }
 
 #alias {auto_assist} {
-  #if {$auto_assist == 1 && $ready_to_assist == 1} {
+  #if {$auto_assist == 1 && $is_fighting == 0} {
     assist $tank;
-    #var ready_to_assist 0;
   }
 }
 
