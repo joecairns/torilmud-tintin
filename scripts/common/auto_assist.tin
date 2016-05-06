@@ -4,10 +4,11 @@
 /*
     tAssist will toggle the auto assister, which is defaulted to off.
 
-    TODO: Taggling assist will fail out unless a tank is assigned.
-
+    TODO: Toggling assist will fail out unless a tank is assigned.
 */
 
+#nop Toggle's auto assist on and off, pass tank name as an argument;
+#nop ex: tassist Splatinator;
 #alias {tassist} {
   #var arg %1;
 
@@ -21,28 +22,17 @@
   }
 }
 
+#nop Set tank name;
 #alias {tank} {
   #var tank %1;
   #echo {%c%h} {blue} { TANK is $tank };
 }
 
+#nopt exectute assist;
 #alias {auto_assist} {
   #if {$auto_assist == 1 && $is_fighting == 0} {
     assist $tank;
   }
 }
-
-#action {You can't see who is fighting $tank.} {
-  #delay 15;
-  auto_assist;
-}
-
-#action {$tank sends %0 sprawling with a %0 bash.$} {auto_assist}
-#action {$tank places %0 in the back} {auto_assist}
-#action {$tank does an acrobatic maneuver} {auto_assist}
-#action {$tank attacks %0, landing} {auto_assist}
-#action {$tank's attack only grazes %0} {auto_assist}
-#action {$tank {wounds|hits|slashes} %0} {auto_assist}
-#action {$tank grits {his|her} teeth and viciously headbutts %0 in the face!} {auto_assist}
 
 #showme ...Loaded auto_assist.tin
