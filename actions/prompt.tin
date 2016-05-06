@@ -1,3 +1,5 @@
+#nop;
+
 #action {< P: %1 >} {
   #var is_fighting 0;
   #var character_position %1;

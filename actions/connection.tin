@@ -1,0 +1,35 @@
+#nop;
+
+/* NEVER trigger your password EVER! */
+#action {Account name} {
+  #if {&{my_account}} {
+    $my_account;
+  } {
+    #showme ****************************************************;
+    #showme * Supply <my_account> variable with your account;
+    #showme * in the config/settings.tin file;
+    #showme ****************************************************;
+    #end;
+  };
+}
+
+/* Load character, race, and class script files */
+#action {Welcome to Toril!} {sc}
+
+#action {Score information for %1} {#var character_name %1}
+
+#action {Level: %1 Race: %w %+ Class: %3%s$} {
+  #var {character_level} {%1};
+  #var {character_race} {%2};
+  #var {character_class} {%3};
+
+  #if {$initialized == 0} {
+    #read characters/$character_name$file_suffix;
+    #read races/$character_race$file_suffix;
+    #read classes/$character_class$file_suffix;
+  };
+
+  #var initialized 1;
+}
+
+#action {Welcome to Toril!} {score}

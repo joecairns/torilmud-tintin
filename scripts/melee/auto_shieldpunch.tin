@@ -16,7 +16,4 @@
   #if {$auto_shieldpunch == 1} {shieldpunch}
 }
 
-#action {You slam your shield into %0} {sp}
-#action {You miss %0 with your clumsy shieldpunch!} {sp}
-
 #showme ...Loaded auto_shieldpunch.tin

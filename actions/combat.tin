@@ -1,0 +1,38 @@
+#nop;
+
+/* Auto Assist Actions */
+#action {You can't see who is fighting $tank.} {
+  #delay 15;
+  auto_assist;
+}
+
+/* tank is fighting */
+#action {$tank sends %0 sprawling with a %0 bash.$} {auto_assist}
+#action {$tank places %0 in the back} {auto_assist}
+#action {$tank does an acrobatic maneuver} {auto_assist}
+#action {$tank attacks %0, landing} {auto_assist}
+#action {$tank's attack only grazes %0} {auto_assist}
+#action {$tank {wounds|hits|slashes} %0} {auto_assist}
+#action {$tank grits {his|her} teeth and viciously headbutts %0 in the face!} {auto_assist}
+
+/* Mob Stands up */
+#action {%0 clambers to %1 feet.} {bb}
+#action {%0 rises to %1 feet.} {bb}
+#action {%0 staggers about, but manages to get to %* feet.} {bb}
+
+/* Missed my bash */
+#action {%0 avoids your bash,} {
+  stand;
+  bb;
+}
+
+/* I kick */
+#action {Your beautiful full-circle-kick misses %0 by a mile.} {auto_kick}
+#action {You miss your kick at %0 groin, much to his relief.} {auto_kick}
+#action {Your boots need polishing again - blood all over.} {auto_kick}
+#action {Your kick hits %0 in the solar plexus.} {auto_kick}
+
+/* I shield punch */
+#action {You slam your shield into %0} {sp}
+#action {You miss %0 with your clumsy shieldpunch!} {sp}
+

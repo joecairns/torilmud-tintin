@@ -4,11 +4,15 @@
 #read config/settings.tin
 #read config/loader.tin
 #read helpers/string_helpers.tin
-#read scripts/common/fight_status.tin
 #read scripts/common/logger.tin
 #read scripts/common/katumi.tin
 #read scripts/common/auto_assist.tin
 #read scripts/common/auto_stand.tin
+#read actions/auto_stand.tin
+#read actions/chat.tin
+#read actions/combat.tin
+#read actions/connection.tin
+#read actions/prompt.tin
 
 #var initialized 0
 
@@ -17,19 +21,6 @@
 #alias {reset} {
   #read toril.tin;
   score;
-}
-
-/* NEVER trigger your password EVER! */
-#action {Account name} {
-  #if {&{my_account}} {
-    $my_account;
-  } {
-    #showme ****************************************************;
-    #showme * Supply <my_account> variable with your account;
-    #showme * in the config/settings.tin file;
-    #showme ****************************************************;
-    #end;
-  };
 }
 
 /* have fun! */

@@ -1,0 +1,34 @@
+#action {Maybe you should get up off your knees first?} {astand}
+#action {Maybe you should get on your feet first?} {astand}
+#action {%0 sends you crashing to the ground in a spray} {astand}
+#action {%1 avoids your%0bash, you topple over and fall to the ground.} {astand}
+#action {%0 and you go down as well.} {astand}
+#action {%0 does an acrobatic maneuver in battle, tripping you.} {astand}
+#action {%0 flipping you onto your back!} {astand}
+#action {Get off your knees!} {astand}
+#action {In your haste to slam people around, you slip and fall!} {astand}
+#action {%0 just for the attempt, you fall down.} {astand}
+#action {%0 only to fall onto your face THROUGH} {astand}
+#action {%0 only to sprawl completely THROUGH it.} {astand}
+#action {%0 sends you sprawling.} {astand}
+#action {%0 shifts sideways and you sail past, tumbling helplessly!} {astand}
+#action {The powerful sweep sends you crashing to the ground!} {astand}
+#action {The space around you seems to fold} {look in fold}
+#action {%0 throw yourself head first directly into the ground!} {astand}
+#action {You are knocked down} {astand}
+#action {You are knocked off of your feet} {astand}
+#action {You are knocked to the ground by the powerful winds!} {astand}
+#action {You are knocked to the ground by the torrent of power thrown at your body!} {astand}
+#action {You are slammed down on the ground!} {astand}
+#action {You fall and injure yourself!} {astand}
+#action {You go crashing to the} {astand}
+#action {You go crashing to the ground.} {astand}
+#action {You lose your balance and fall down!} {astand}
+#action {You lose your balance and are dismounted.} {astand}
+#action {You simply bounce off } {astand}
+#action {You stagger about, then fall sprawling!} {astand}
+#action {You stagger, and fall to your knees!} {astand}
+#action {you topple over} {astand}
+#action {You are swept off your feet by the size of the wave!} {astand}
+#action {Boldly taking the impact, you are still knocked aside!} {astand}
+#action {Intense pain runs through your body as your ribs fracture from the impact.} {astand}

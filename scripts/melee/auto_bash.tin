@@ -16,13 +16,4 @@
   #if {$auto_bash == 1} {bash}
 }
 
-#action {%0 clambers to %1 feet.} {bb}
-#action {%0 rises to %1 feet.} {bb}
-#action {%0 staggers about, but manages to get to %* feet.} {bb}
-
-#action {%0 avoids your bash,} {
-  stand;
-  bb;
-}
-
 #showme ...Loaded auto_bash.tin

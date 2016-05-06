@@ -16,9 +16,4 @@
   #if {$auto_kick == 1} {kick};
 }
 
-#action {Your beautiful full-circle-kick misses %0 by a mile.} {auto_kick}
-#action {You miss your kick at %0 groin, much to his relief.} {auto_kick}
-#action {Your boots need polishing again - blood all over.} {auto_kick}
-#action {Your kick hits %0 in the solar plexus.} {auto_kick}
-
 #showme ...Loaded auto_kick.tin
