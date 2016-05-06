@@ -20,7 +20,7 @@
 }
 
 /* NEVER trigger your password EVER! */
-#action {^Account name} {
+#action {Account name} {
   #if {&{my_account}} {
     $my_account;
   } {
